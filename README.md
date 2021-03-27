@@ -4,4 +4,4 @@ ransomware.py only infects the files inside of infection.
 
 The backup_files are there just in case. 
 
-Trying to encrypt a GIF tends to overwhelm Python's Fernet library a little bit, so it isn't required, and the GIF is kept outside of the infection directory. 
+Trying to encrypt a GIF tends to overwhelm Python's Fernet library a little bit, so I wouldn't recommend trying it, and as a result the GIF is kept outside of the infection directory. 
